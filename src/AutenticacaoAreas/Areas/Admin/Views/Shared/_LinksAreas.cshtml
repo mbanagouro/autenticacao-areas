@@ -1,0 +1,10 @@
+﻿@using AutenticacaoAreas.Application.Services
+@{
+    Autenticacao.UsuarioLogado usuarioLogado = new AutenticacaoAdmin().ObterAutenticado();
+}
+<ul class="nav navbar-nav navbar-right">
+    @if (usuarioLogado != null)
+    {
+        <li><a href="@Url.RouteUrl("Admin.Login.Sair")">Deslogar</a></li>
+    }
+</ul>
